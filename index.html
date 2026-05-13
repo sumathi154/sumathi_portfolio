@@ -246,9 +246,14 @@
       border: 1px solid var(--border);
       border-radius: 8px;
       padding: 28px;
+      padding-bottom: 52px;
       transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
       position: relative;
       overflow: hidden;
+      text-decoration: none;
+      display: block;
+      color: inherit;
+      cursor: pointer;
     }
 
     .project-card::before {
@@ -259,7 +264,26 @@
       background: var(--accent);
       transition: height 0.3s;
     }
+
+    .project-card::after {
+      content: '↗ View on GitHub';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: var(--accent);
+      color: #0d0d0f;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-align: center;
+      padding: 10px;
+      opacity: 0;
+      transform: translateY(100%);
+      transition: opacity 0.25s, transform 0.25s;
+    }
+
     .project-card:hover::before { height: 100%; }
+    .project-card:hover::after { opacity: 1; transform: translateY(0); }
     .project-card:hover {
       transform: translateY(-4px);
       border-color: rgba(200,151,90,0.5);
@@ -485,9 +509,7 @@
 
 <!-- SIDEBAR -->
 <aside id="sidebar">
-  <div class="avatar-wrap">
-  <img src="photo.jpg" alt="Sumathi M" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" />
-  </div>
+  <div class="avatar-wrap"><img src="photo.jpg" alt="Sumathi M" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /></div>
   <h1>Sumathi M</h1>
   <p class="tagline">Data Analyst &amp; Researcher</p>
 
@@ -533,7 +555,7 @@
 
     <div class="projects-grid">
 
-      <div class="project-card">
+      <a class="project-card" href="https://github.com/sumathi154" target="_blank">
         <span class="project-icon">📊</span>
         <h3>Sales Insight Dashboard</h3>
         <p>End-to-end retail BI dashboard — gathered KPI requirements from stakeholders, analysed master data, and delivered a Power BI dashboard with 0% process errors.</p>
@@ -545,7 +567,7 @@
         </div>
       </div>
 
-      <div class="project-card">
+      <a class="project-card" href="https://github.com/sumathi154" target="_blank">
         <span class="project-icon">🧠</span>
         <h3>ADHD Classification Framework</h3>
         <p>Innovative ML framework for classifying ADHD from childhood to adolescence using AI — presented at IEEE ICACRS-2023 and ongoing PhD research at RVCE under VTU.</p>
@@ -556,7 +578,7 @@
         </div>
       </div>
 
-      <div class="project-card">
+      <a class="project-card" href="https://github.com/sumathi154" target="_blank">
         <span class="project-icon">🩺</span>
         <h3>Diabetes Prediction Model</h3>
         <p>Mentored undergraduate students in building a diabetes prediction system using supervised machine learning algorithms — achieving strong accuracy on clinical datasets.</p>
@@ -567,7 +589,7 @@
         </div>
       </div>
 
-      <div class="project-card">
+      <a class="project-card" href="https://github.com/sumathi154" target="_blank">
         <span class="project-icon">🔬</span>
         <h3>Cervical Cancer Detection</h3>
         <p>Guided students in applying ML algorithms for early detection of cervical cancer, exploring classification techniques for medical image and tabular data.</p>
@@ -578,7 +600,7 @@
         </div>
       </div>
 
-      <div class="project-card">
+      <a class="project-card" href="https://github.com/sumathi154" target="_blank">
         <span class="project-icon">☁️</span>
         <h3>Multifactor Cloud Authentication</h3>
         <p>Designed and published a system implementing multifactor authentication for accessing cloud services, enhancing security for IaaS environments.</p>
@@ -587,9 +609,9 @@
           <span class="tech-badge">Cloud Security</span>
           <span class="tech-badge">IJSRP</span>
         </div>
-      </div>
+      </a>
 
-      <div class="project-card">
+      <a class="project-card"
         <span class="project-icon">🗄️</span>
         <h3>Database & ETL Pipelines</h3>
         <p>Designed and optimised relational databases and ETL workflows using Microsoft SSMS and SSIS for enterprise-level data integration and reporting.</p>
@@ -599,7 +621,7 @@
           <span class="tech-badge">Oracle</span>
           <span class="tech-badge">MySQL</span>
         </div>
-      </div>
+      </a>
 
     </div>
   </section>
